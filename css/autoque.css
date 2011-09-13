@@ -1,0 +1,96 @@
+.aQbutton{
+  display:inline-block;
+  opacity:.6;
+  cursor:pointer;
+  vertical-align:middle;
+  padding-left:2px;
+  width:15%;
+  height:100%;
+}
+
+.aQbutton:hover{
+  opacity:1;
+}
+
+#cRewind{
+  letter-spacing:-10px;
+}
+
+#cFastForward{
+  letter-spacing:-10px;
+  margin-left:-20px;
+}
+
+#cPause{
+  /*behavior:url(-ms-transform.htc);*/
+  -moz-transform:rotate(90deg);
+  -webkit-transform:rotate(-90deg);
+  -o-transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  position:relative;
+  font-size:200%;
+  font-weight:800;
+  width:15%;
+  height:5%;
+}
+
+#autoqueControls{
+  position:fixed;
+}
+
+#cUnplay{
+  position:relative;
+  width:10%;
+  margin-left:5px;
+}
+
+#cPlay{
+  position:relative;
+  font-size:200%;
+  width: 30%;
+}
+
+#auto{
+  position:absolute;
+  top:0;
+}
+
+#example{
+  position:relative;
+  height:400px;
+}  
+
+#fastslow{
+  height:40px;
+  text-align:center;
+  opacity:.8;
+  background-color:#fff;
+}
+
+#fastslow:hover{
+  opacity:1;
+  cursor:pointer;
+}
+
+#faster{
+  width:50%;
+  position:absolute;
+  right:0px;
+  height:40px;
+  border-left:solid 1px;
+}
+
+#faster:hover{
+  background-color:lightgrey;
+}
+
+#slower{
+  width:50%;
+  position:absolute;
+  left:0px;
+  height:40px;
+}
+
+#slower:hover{
+  background-color:lightgrey;
+}
