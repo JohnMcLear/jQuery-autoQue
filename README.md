@@ -19,7 +19,7 @@ See index.html and que.html for examples.
 
 # Installation
 
-1. Include the latest jQuery<code>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script></code>
+1. Include the latest (requires 1.4.2)
 2. Include the autoQue.js <code>&lt;script type="text/javascript" src="js/autoque.js"></script></code>
 3. Include the autoQue.css <code>&lt;link rel="stylesheet" href="css/autoque.css" type="text/css"/></code>
 4. Initiate the plugin <code>$('#thisDiv').autoque();</code>
