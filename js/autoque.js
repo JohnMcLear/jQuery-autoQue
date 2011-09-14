@@ -51,12 +51,15 @@
     var timeToTalk = (wordCount / .75) * 100; // in seconds
 
     // Define the controls and write them to the UI
-    var controls = "<div class='aQbutton' id='cRewind' title='Rewind'>&#9668;&#9668;</div> <div class='aQbutton' id='cUnplay' title='Play backwards'>&#9668;</div> <div class='aQbutton' id='cPause' title='Pause'>=</div><div class='aQbutton' id='cPlay' title='Play'>&#9658;</div><div class='aQbutton' id='cFastForward' title='Fast Forward'>&#9658;&#9658;</div>";
+    var controls = "<div class='aQbutton' id='cRewind' title='Rewind'>&#9668;&#9668;</div> <div class='aQbutton' id='cUnplay' title='Play backwards'>&#9668;</div> <div class='aQbutton' id='cPause' title='Pause'>=</div><div class='aQbutton' id='cPlay' title='Play'>&#9658;</div><div class='aQbutton' id='cFastForward' title='Fast Forward'>&#9658;&#9658;</div><div id='speed'></div>";
     $(this).html("<div id='auto'>" + original +"</div>");
-    $(this).append("<div id='autoqueControls'><div id='fastslow'><div id='faster' title='Faster'>+</div><div id='slower' title='slower'>-</div></div>"+controls+"</div>");
+    $(this).append("<div id='autoqueControls'><div id='fastslow'><div id='slower' title='slower'>-</div><div id='faster' title='Faster'>+</div></div>"+controls+"</div>");
     $("#autoqueControls").css({'width':settings.controlSize}); 
     $("#autoqueControls").css({'opacity':settings.controlOpacity});
     $("#autoqueControls").css('borderRadius',settings.controlRadius);
+    $("#fastslow").css('borderRadius',settings.controlRadius);
+    $("#slower").css('borderRadius',settings.controlRadius);
+    $("#faster").css('borderRadius',settings.controlRadius);
     $("#autoqueControls").css({"right":"10px","bottom":"5px"}); // This needs fixing cake
     $("#autoqueControls").css({'backgroundColor':settings.controlBGColor});
 
@@ -139,6 +142,7 @@
       timePlayed = 0;
       $('#auto').stop();
       $('#auto').animate({'top':'-'+height+'px'}, timeToTalk);
+      showspeed(speed);
     }
 
     function slower(){
@@ -149,6 +153,7 @@
       timePlayed = 0;
       $('#auto').stop();
       $('#auto').animate({'top':'-'+height+'px'}, timeToTalk);
+      showspeed(speed);
     }
 
     function increaseTimePlayed(){
@@ -163,6 +168,12 @@
       timePlayed = timePlayed/10;
       errlog("Time played through till completion was: "+ timePlayed +" seconds");
       timePlayed = 0;
+    }
+
+    function showspeed(speed){
+      $('#speed').html(speed);
+      $('#speed').fadeIn();
+      setTimeout("$('#speed').fadeOut();",2000);
     }
 
   };

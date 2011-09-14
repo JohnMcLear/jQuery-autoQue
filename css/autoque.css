@@ -23,7 +23,6 @@
 }
 
 #cPause{
-  /*behavior:url(-ms-transform.htc);*/
   -moz-transform:rotate(90deg);
   -webkit-transform:rotate(-90deg);
   -o-transform:rotate(90deg);
@@ -63,7 +62,6 @@
 }
 
 #example{
-/*  position:relative;*/
   height:400px;
   position:absolute;
   top:200px;
@@ -71,7 +69,6 @@
 }  
 
 #fastslow{
-  height:40px;
   text-align:center;
   opacity:.8;
   background-color:#fff;
@@ -83,13 +80,11 @@
 }
 
 #faster{
-  width:50%;
-  position:absolute;
+  width:49%;
   right:0px;
-  height:40px;
+  display:inline-block;
   border-left:solid 1px;
   font-weight:800;
- 
 }
 
 #faster:hover{
@@ -97,11 +92,12 @@
 }
 
 #slower{
-  width:50%;
-  position:absolute;
+  width:49%;
+  display:inline-block;
   left:0px;
-  height:40px;
   font-weight:800;
+  border-right:solid 1px;
+
 }
 
 #slower:hover{
@@ -111,4 +107,16 @@
 a{
 border:0;
 padding:0;
+}
+
+#speed{
+  width:10%;
+  height:33%;
+  position:absolute;
+  right:45%;
+  top:2%;
+  background-color:lightgrey;	
+  display:none;
+  text-align:center;
+  opacity:.8;
 }
