@@ -24,25 +24,31 @@ See index.html and que.html for examples.
 # Plugin Parameters
 
 Parameters can be passed to the jQuery plugin in JSON.  The available paremeters are:
+<pre>
 'hoverRequired'    : 'false', // Is a hover required to see the controls?
 'fontSize'        : '36px', // The font size used
+'fontColor'       : '#777', // The color of the font
 'controlSize'     : '', // size of the controls - will auto resize
 'controlRadius'   : '20px', // the radius of the corners on the controls
 'controlOpacity'  : '.9', // the opacity of the controls
 'controlBGColor'  : 'lightgrey',
 'controlLocation' : '"right","10px"' // The location of the controls
+</pre>
 
 Example:  $('#que').autoque('hoverRequired':'true');
 
 Parameters can be pased the que.html as a "GET".  The available parameters are:
+<pre>
 'q'               : 'a really pointless string' // The text string you want the autoQue to read out
 'hoverRequired'    : 'false', // Is a hover required to see the controls?
 'fontSize'        : '36px', // The font size used
+'fontColor'       : '#777', // The color of the font
 'controlSize'     : '', // size of the controls - will auto resize
 'controlRadius'   : '20px', // the radius of the corners on the controls
 'controlOpacity'  : '.9', // the opacity of the controls
 'controlBGColor'  : 'lightgrey',
 'controlLocation' : '"right","10px"' // The location of the controls
+</pre>
 
 Example: /que.html?q=this%20is%20a%20string%20that%20needs%20to%20be%20at%20least%2030%20characters&hoverRequired=false
 
