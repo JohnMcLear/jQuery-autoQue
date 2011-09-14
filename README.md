@@ -16,10 +16,13 @@ See index.html and que.html for examples.
 
 # Installation
 
-1. Include the latest jQuery --> <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-2. Include the autoQue.js --> <script type="text/javascript" src="js/autoque.js"></script>
-3. Include the autoQue.css --> <link rel="stylesheet" href="css/autoque.css" type="text/css"/>
-4. Initiate the plugin --> $('#thisDiv').autoque();
+1. Include the latest jQuery 
+<pre><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script></pre>
+2. Include the autoQue.js --> 
+<pre><script type="text/javascript" src="js/autoque.js"></script></pre>
+3. Include the autoQue.css --> 
+<pre><link rel="stylesheet" href="css/autoque.css" type="text/css"/></pre>
+4. Initiate the plugin --> <pre>$('#thisDiv').autoque();</pre>
 
 # Plugin Parameters
 
