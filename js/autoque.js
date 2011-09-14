@@ -40,11 +40,13 @@
     // Set a blank timePlayed and false playing value
     var timePlayed = 0;
     var playing = false; // We need this value to see if we are currently playing or not
+    var interval = false;
+    var speed = 0;
 
     // Get current content and a word count
     var original = this.html();
     var wordCount = original.split(' ').length;
-
+ 
     // how long would this wordcount take?
     var timeToTalk = (wordCount / .75) * 100; // in seconds
 
@@ -72,22 +74,26 @@
 
     // Some functions to control the playback
     function rewind(){ // A rewind function
+      playing = false;
+      clearInterval(interval);
       errlog("Performing a rewind");
       $('#auto').stop();
       $('#auto').animate({'top':'0px'}, 'fast');
     }
 
     function unplay(){ // An unplay function
+
     }
 
     function pause(){ // A pause function
       $('#auto').stop();
       playing = false;
+      clearInterval(interval);
     }
 
     function play(){ // A play function
       playing = true;
-      setInterval(increaseTimePlayed,100);
+      interval = setInterval(increaseTimePlayed,100);
       // First things first, put the top of the div at the bottom
       $('#auto').height(height+'px');
       $('#example').css('overflow','hidden');
@@ -104,12 +110,17 @@
         errlog("Animating the top of the document to be off the page");
       }
       else{
-        // var timeToTalk = timeToTalk; // cake -- We need to figure out how much is still left to process and how long this will take to do
+        errlog(timePlayed*100);
+        timeToTalk = timeToTalk -(timePlayed*100); // Reculculate the time left to play
+        errlog ("newly culclated time to talk is "+timeToTalk);
+        timePlayed = 0;
       }
       $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, function(){resetTimePlayed();}); 
     }
 
     function fastForward(){
+      playing = false;
+      clearInterval(interval);
       errlog("Fast forwarding this doc");
       currentPosition = $('#auto').css('top');
       errlog(currentPosition);
@@ -121,16 +132,23 @@
     }
 
     function faster(){
-      errlog("Lets make this animation faster");
-      errlog("Current position is" +currentPosition);
-      errlog("timeToTalk is " +timeToTalk);
-      timeToTalk = timeToTalk - (timeToTalk*.1);
+      playing = false;
+      clearInterval(interval);
+      speed++;
+      timeToTalk = timeToTalk*.8;
+      timePlayed = 0;
       $('#auto').stop();
       $('#auto').animate({'top':'-'+height+'px'}, timeToTalk);
     }
 
     function slower(){
-      
+      playing = false;
+      clearInterval(interval);
+      speed--; 
+      timeToTalk = timeToTalk*1.2;
+      timePlayed = 0;
+      $('#auto').stop();
+      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk);
     }
 
     function increaseTimePlayed(){
@@ -142,7 +160,8 @@
 
     function resetTimePlayed(){
       playing = false;
-      errlog("Time played was: "+ timePlayed);
+      timePlayed = timePlayed/10;
+      errlog("Time played through till completion was: "+ timePlayed +" seconds");
       timePlayed = 0;
     }
 
