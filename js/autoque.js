@@ -37,6 +37,10 @@
     var width = this.width();
     errlog("width of div is "+height);
 
+    // Set a blank timePlayed and false playing value
+    var timePlayed = 0;
+    var playing = false; // We need this value to see if we are currently playing or not
+
     // Get current content and a word count
     var original = this.html();
     var wordCount = original.split(' ').length;
@@ -78,22 +82,31 @@
 
     function pause(){ // A pause function
       $('#auto').stop();
+      playing = false;
     }
 
     function play(){ // A play function
+      playing = true;
+      setInterval(increaseTimePlayed,100);
       // First things first, put the top of the div at the bottom
       $('#auto').height(height+'px');
       $('#example').css('overflow','hidden');
       currentPosition = $('#auto').css('top');
       errlog(currentPosition);
-      if (currentPosition == '0px'){ // This if statement stops the pause button from re-starting the whole process after being unpaused
+      errlog(height);
+      if (currentPosition == "-"+height+"px"){
+        errlog("Restarting play as it appears to have finished");
         $('#auto').animate({'top':height+'px'});
+      }
+
+      if (currentPosition == '0px'){ // This if statement stops the pause button from re-starting the whole process after being unpaused
+        $('#auto').animate({'top':height+'px'}, 500);
         errlog("Animating the top of the document to be off the page");
       }
       else{
         // var timeToTalk = timeToTalk; // cake -- We need to figure out how much is still left to process and how long this will take to do
       }
-      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk); 
+      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, function(){resetTimePlayed();}); 
     }
 
     function fastForward(){
@@ -101,9 +114,10 @@
       currentPosition = $('#auto').css('top');
       errlog(currentPosition);
       forwardedPosition = currentPosition.replace("px","") - 100;
-      errlog("Sending to "+forwardedPosition);
+      errlog("Sending top of contents to "+forwardedPosition+"px");
       $('#auto').stop();
-      $('#auto').animate({'top':'-'+forwardedPosition+'px'}, 1000);
+      $('#auto').animate({'top':forwardedPosition+'px'}, 1000);
+      // it should keep playing here
     }
 
     function faster(){
@@ -117,6 +131,19 @@
 
     function slower(){
       
+    }
+
+    function increaseTimePlayed(){
+      if (playing == true){
+        timePlayed++;
+        errlog(timePlayed/10); // This outputs the number of seconds we have played for
+      }
+    }
+
+    function resetTimePlayed(){
+      playing = false;
+      errlog("Time played was: "+ timePlayed);
+      timePlayed = 0;
     }
 
   };
