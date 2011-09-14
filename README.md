@@ -20,17 +20,17 @@ See index.html and que.html for examples.
 # Installation
 
 1. Include the latest jQuery 
-<code><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script></code>
-2. Include the autoQue.js --> 
-<code><script type="text/javascript" src="js/autoque.js"></script></code>
-3. Include the autoQue.css --> 
-<code><link rel="stylesheet" href="css/autoque.css" type="text/css"/></code>
-4. Initiate the plugin --> <code>$('#thisDiv').autoque();</code>
+<code>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script></code>
+2. Include the autoQue.js 
+<code>&lt;script type="text/javascript" src="js/autoque.js"></script></code>
+3. Include the autoQue.css  
+<code>&lt;link rel="stylesheet" href="css/autoque.css" type="text/css"/></code>
+4. Initiate the plugin <code>$('#thisDiv').autoque();</code>
 
 # Plugin Parameters
 
 Parameters can be passed to the jQuery plugin in JSON.  The available paremeters are:
-<code>
+<pre>
 'hoverRequired'    : 'false', // Is a hover required to see the controls?
 'fontSize'        : '36px', // The font size used
 'fontColor'       : '#777', // The color of the font
@@ -39,12 +39,12 @@ Parameters can be passed to the jQuery plugin in JSON.  The available paremeters
 'controlOpacity'  : '.9', // the opacity of the controls
 'controlBGColor'  : 'lightgrey',
 'controlLocation' : '"right","10px"' // The location of the controls
-</code>
+</pre>
 
 Example:  $('#que').autoque('hoverRequired':'true');
 
 Parameters can be pased the que.html as a "GET".  The available parameters are:
-<code>
+<pre>
 'q'               : 'a really pointless string' // The text string you want the autoQue to read out
 'hoverRequired'    : 'false', // Is a hover required to see the controls?
 'fontSize'        : '36px', // The font size used
@@ -54,7 +54,7 @@ Parameters can be pased the que.html as a "GET".  The available parameters are:
 'controlOpacity'  : '.9', // the opacity of the controls
 'controlBGColor'  : 'lightgrey',
 'controlLocation' : '"right","10px"' // The location of the controls
-</code>
+</pre>
 
 Example: /que.html?q=this%20is%20a%20string%20that%20needs%20to%20be%20at%20least%2030%20characters&hoverRequired=false
 
