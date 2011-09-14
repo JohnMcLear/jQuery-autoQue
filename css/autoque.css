@@ -42,6 +42,7 @@
   position:relative;
   width:10%;
   margin-left:5px;
+  z-index:9;
 }
 
 #cPlay{
@@ -56,8 +57,11 @@
 }
 
 #example{
-  position:relative;
+/*  position:relative;*/
   height:400px;
+  position:absolute;
+  top:200px;
+  width:95%;
 }  
 
 #fastslow{

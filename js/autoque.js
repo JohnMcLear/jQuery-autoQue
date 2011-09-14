@@ -45,9 +45,9 @@
     var timeToTalk = (wordCount / .75) * 100; // in seconds
 
     // Define the controls and write them to the UI
-    var controls = "<div class='aQbutton' id='cRewind'>&#9668;&#9668;</div> <div class='aQbutton' id='cUnplay'>&#9668;</div> <div class='aQbutton' id='cPause'>=</div><div class='aQbutton' id='cPlay'>&#9658;</div><div class='aQbutton' id='cFastForward'>&#9658;&#9658;</div>";
+    var controls = "<div class='aQbutton' id='cRewind' title='Rewind'>&#9668;&#9668;</div> <div class='aQbutton' id='cUnplay' title='Play backwards'>&#9668;</div> <div class='aQbutton' id='cPause' title='Pause'>=</div><div class='aQbutton' id='cPlay' title='Play'>&#9658;</div><div class='aQbutton' id='cFastForward' title='Fast Forward'>&#9658;&#9658;</div>";
     $(this).html("<div id='auto'>" + original +"</div>");
-    $(this).append("<div id='autoqueControls'><div id='fastslow'><div id='faster'>+</div><div id='slower'>-</div></div>"+controls+"</div>");
+    $(this).append("<div id='autoqueControls'><div id='fastslow'><div id='faster' title='Faster'>+</div><div id='slower' title='slower'>-</div></div>"+controls+"</div>");
     $("#autoqueControls").css({'width':settings.controlSize}); 
     $("#autoqueControls").css({'opacity':settings.controlOpacity});
     $("#autoqueControls").css('borderRadius',settings.controlRadius);
