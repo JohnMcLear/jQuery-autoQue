@@ -23,6 +23,7 @@ function gup( name )
 <script type="text/javascript">
 var q = gup("q");
 var q = unescape(q);
+var q = q.replace(/\+/g," "); // I hate doing this
 $('#que').html(q);
 $('#que').autoque();  
 </script>
