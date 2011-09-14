@@ -58,8 +58,8 @@
     $("#autoqueControls").css({'opacity':settings.controlOpacity});
     $("#autoqueControls").css('borderRadius',settings.controlRadius);
     $("#fastslow").css('borderRadius',settings.controlRadius);
-    $("#slower").css('borderRadius',settings.controlRadius);
-    $("#faster").css('borderRadius',settings.controlRadius);
+/*    $("#slower").css('borderRadius',settings.controlRadius);
+    $("#faster").css('borderRadius',settings.controlRadius);*/
     $("#autoqueControls").css({"right":"10px","bottom":"5px"}); // This needs fixing cake
     $("#autoqueControls").css({'backgroundColor':settings.controlBGColor});
 
