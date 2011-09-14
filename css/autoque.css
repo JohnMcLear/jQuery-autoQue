@@ -49,7 +49,8 @@
 #cPlay{
   position:relative;
   font-size:200%;
-  width: 30%;
+  width: 25%;
+  margin-right:15px;
 }
 
 #auto{
