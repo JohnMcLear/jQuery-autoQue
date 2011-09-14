@@ -85,7 +85,8 @@
     }
 
     function unplay(){ // An unplay function
-
+      $('#auto').stop();
+      $('#auto').animate({'top':'+'+height+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();});
     }
 
     function pause(){ // A pause function
@@ -105,11 +106,11 @@
       errlog(height);
       if (currentPosition == "-"+height+"px"){
         errlog("Restarting play as it appears to have finished");
-        $('#auto').animate({'top':height+'px'});
+        $('#auto').animate({'top':height+'px'}, 'linear');
       }
 
       if (currentPosition == '0px'){ // This if statement stops the pause button from re-starting the whole process after being unpaused
-        $('#auto').animate({'top':height+'px'}, 500);
+        $('#auto').css({'top':height+'px'});
         errlog("Animating the top of the document to be off the page");
       }
       else{
@@ -118,7 +119,8 @@
         errlog ("newly culclated time to talk is "+timeToTalk);
         timePlayed = 0;
       }
-      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, function(){resetTimePlayed();}); 
+      $('#auto').stop();
+      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();}); 
     }
 
     function fastForward(){
@@ -141,7 +143,7 @@
       timeToTalk = timeToTalk*.8;
       timePlayed = 0;
       $('#auto').stop();
-      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk);
+      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, 'linear');
       showspeed(speed);
     }
 
@@ -152,7 +154,7 @@
       timeToTalk = timeToTalk*1.2;
       timePlayed = 0;
       $('#auto').stop();
-      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk);
+      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, 'linear');
       showspeed(speed);
     }
 
