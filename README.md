@@ -12,6 +12,9 @@ Visit <http://primaryschoolict.com/autoQue/> to test it live
 
 # Example
 
+Basic usage example
+<pre>$('#que').autoque();</pre>
+
 See index.html and que.html for examples.
 
 # Installation
