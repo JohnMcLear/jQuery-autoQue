@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<html>
 <head>
 <title>AutoQue - Press F11 for full screen</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -18,14 +18,14 @@ function gup( name )
 }
 </script>
 </head>
-<body style="overflow:hidden;">
-<div id="que" style="width:100%;height:100%;"></div>
+<body style="overflow:hidden;background-color:#000;">
+<div id="que" style="width:100%;height:100%;color:#000"></div>
 <script type="text/javascript">
 var q = gup("q");
 var q = unescape(q);
 var q = q.replace(/\+/g," "); // I hate doing this
 $('#que').html(q);
-$('#que').autoque();  
+$('#que').autoque({"fontColor":"#fff"});  
 </script>
 </body>
 </html>
