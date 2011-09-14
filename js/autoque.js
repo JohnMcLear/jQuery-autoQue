@@ -18,6 +18,7 @@
     var settings = {
       'hoverRequired'     : 'false', // Is a hover required to see the controls?
       'fontSize'        : '36px', // The font size used
+      'fontColor'	: '#fff', // The color of the font
       'controlSize'     : '', // size of the controls - will auto resize
       'controlRadius'   : '20px', // the radius of the corners on the controls
       'controlOpacity'  : '.9', // the opacity of the controls
@@ -58,6 +59,7 @@
     var controls = "<div class='aQbutton' id='cRewind' title='Rewind'>&#9668;&#9668;</div> <div class='aQbutton' id='cUnplay' title='Play backwards'>&#9668;</div> <div class='aQbutton' id='cPause' title='Pause'>=</div><div class='aQbutton' id='cPlay' title='Play'>&#9658;</div><div class='aQbutton' id='cFastForward' title='Fast Forward'>&#9658;&#9658;</div><div id='speed'></div>";
     $(this).html("<div id='auto'>" + original +"</div>");
     $(this).append("<div id='autoqueControls'><div id='fastslow'><div id='slower' title='slower'>-</div><div id='faster' title='Faster'>+</div></div>"+controls+"</div>");
+    $("#auto").css({'color':settings.fontColor});
     $("#autoqueControls").css({'width':settings.controlSize}); 
     $("#autoqueControls").css({'opacity':settings.controlOpacity});
     $("#autoqueControls").css('borderRadius',settings.controlRadius);
@@ -136,7 +138,7 @@
       forwardedPosition = currentPosition.replace("px","") - 100;
       errlog("Sending top of contents to "+forwardedPosition+"px");
       $('#auto').stop();
-      $('#auto').animate({'top':forwardedPosition+'px'}, 1000);
+      $('#auto').animate({'top':forwardedPosition+'px'}, 100, 'linear');
       // it should keep playing here
     }
 
