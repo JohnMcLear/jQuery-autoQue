@@ -19,6 +19,7 @@
 #cFastForward{
   letter-spacing:-10px;
   margin-left:-20px;
+  z-index:9;
 }
 
 #cPause{
@@ -82,6 +83,8 @@
   right:0px;
   height:40px;
   border-left:solid 1px;
+  font-weight:800;
+ 
 }
 
 #faster:hover{
@@ -93,8 +96,14 @@
   position:absolute;
   left:0px;
   height:40px;
+  font-weight:800;
 }
 
 #slower:hover{
   background-color:lightgrey;
+}
+
+a{
+border:0;
+padding:0;
 }
