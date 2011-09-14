@@ -13,24 +13,24 @@ Visit <http://primaryschoolict.com/autoQue/> to test it live
 # Example
 
 Basic usage example
-<pre>$('#que').autoque();</pre>
+<code>$('#que').autoque();</code>
 
 See index.html and que.html for examples.
 
 # Installation
 
 1. Include the latest jQuery 
-<pre><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script></pre>
+<code><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script></code>
 2. Include the autoQue.js --> 
-<pre><script type="text/javascript" src="js/autoque.js"></script></pre>
+<code><script type="text/javascript" src="js/autoque.js"></script></code>
 3. Include the autoQue.css --> 
-<pre><link rel="stylesheet" href="css/autoque.css" type="text/css"/></pre>
-4. Initiate the plugin --> <pre>$('#thisDiv').autoque();</pre>
+<code><link rel="stylesheet" href="css/autoque.css" type="text/css"/></code>
+4. Initiate the plugin --> <code>$('#thisDiv').autoque();</code>
 
 # Plugin Parameters
 
 Parameters can be passed to the jQuery plugin in JSON.  The available paremeters are:
-<pre>
+<code>
 'hoverRequired'    : 'false', // Is a hover required to see the controls?
 'fontSize'        : '36px', // The font size used
 'fontColor'       : '#777', // The color of the font
@@ -39,12 +39,12 @@ Parameters can be passed to the jQuery plugin in JSON.  The available paremeters
 'controlOpacity'  : '.9', // the opacity of the controls
 'controlBGColor'  : 'lightgrey',
 'controlLocation' : '"right","10px"' // The location of the controls
-</pre>
+</code>
 
 Example:  $('#que').autoque('hoverRequired':'true');
 
 Parameters can be pased the que.html as a "GET".  The available parameters are:
-<pre>
+<code>
 'q'               : 'a really pointless string' // The text string you want the autoQue to read out
 'hoverRequired'    : 'false', // Is a hover required to see the controls?
 'fontSize'        : '36px', // The font size used
@@ -54,7 +54,7 @@ Parameters can be pased the que.html as a "GET".  The available parameters are:
 'controlOpacity'  : '.9', // the opacity of the controls
 'controlBGColor'  : 'lightgrey',
 'controlLocation' : '"right","10px"' // The location of the controls
-</pre>
+</code>
 
 Example: /que.html?q=this%20is%20a%20string%20that%20needs%20to%20be%20at%20least%2030%20characters&hoverRequired=false
 
