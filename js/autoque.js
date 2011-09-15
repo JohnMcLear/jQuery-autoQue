@@ -1,7 +1,7 @@
 // big bugs:  
-// We can only operate on the "auto ID" at the moment
+// We can only operate on the "auto ID" at the moment, this means you can only have one autoque per page which is kinda stupid
 // Spamming Play makes it go really fast
-// Shadow needs to be set as active on all of the buttons
+// IE is broken
 
 (function( $ ){
   var debug = true;
@@ -96,6 +96,8 @@
     }
 
     function play(){ // A play function
+      errlog("Current position is" +currentPosition);
+      errlog("timePlayed is "+timePlayed);
       playing = true;
       interval = setInterval(increaseTimePlayed,100);
       // First things first, put the top of the div at the bottom
