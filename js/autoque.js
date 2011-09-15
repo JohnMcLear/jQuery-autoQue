@@ -1,6 +1,5 @@
 // big bugs:  
 // We can only operate on the "auto ID" at the moment, this means you can only have one autoque per page which is kinda stupid
-// Spamming Play makes it go really fast
 // IE is broken
 
 (function( $ ){
@@ -21,7 +20,8 @@
       'controlRadius'   : '10%', // the radius of the corners on the controls
       'controlOpacity'  : '.9', // the opacity of the controls
       'controlBGColor'  : 'lightgrey',
-      'controlLocation' : {bottom:"10px",right:"10px"} // The location of the controls
+      'controlLocation' : {bottom:"10px",right:"10px"}, // The location of the controls
+      'autoPlay'        : 'false'
     };
 
     // Put the options together
@@ -85,6 +85,8 @@
     }
 
     function unplay(){ // An unplay function
+      playing = true;
+      interval = setInterval(decreaseTimePlayed,100);
       $('#auto').stop();
       $('#auto').animate({'top':'+'+height+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();});
     }
@@ -96,33 +98,36 @@
     }
 
     function play(){ // A play function
-      errlog("Current position is" +currentPosition);
-      errlog("timePlayed is "+timePlayed);
-      playing = true;
-      interval = setInterval(increaseTimePlayed,100);
-      // First things first, put the top of the div at the bottom
-      $('#auto').height(height+'px');
-      $('#example').css('overflow','hidden');
-      currentPosition = $('#auto').css('top');
-      errlog(currentPosition);
-      errlog(height);
-      if (currentPosition == "-"+height+"px"){
-        errlog("Restarting play as it appears to have finished");
-        $('#auto').animate({'top':height+'px'}, 'linear');
+      if (playing != true){
+        clearInterval(interval);
+        playing = true;
+        interval = setInterval(increaseTimePlayed,100);
+        // First things first, put the top of the div at the bottom
+        $('#auto').height(height+'px');
+        $('#example').css('overflow','hidden');
+        currentPosition = $('#auto').css('top');
+  
+        errlog("Current position is" +currentPosition);
+        errlog("timePlayed is "+timePlayed);
+  
+        if (currentPosition == "-"+height+"px"){
+          errlog("Restarting play as it appears to have finished");
+          $('#auto').animate({'top':height+'px'}, 'linear');
+        }
+  
+        if (currentPosition == '0px'){ // This if statement stops the pause button from re-starting the whole process after being unpaused
+          $('#auto').css({'top':height+'px'});
+          errlog("Animating the top of the document to be off the page");
+        }
+        else{
+          errlog(timePlayed*100);
+          timeToTalk = timeToTalk -(timePlayed*100); // Reculculate the time left to play
+          errlog ("newly culclated time to talk is "+timeToTalk);
+          timePlayed = 0;
+        }
+        $('#auto').stop();
+        $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();}); 
       }
-
-      if (currentPosition == '0px'){ // This if statement stops the pause button from re-starting the whole process after being unpaused
-        $('#auto').css({'top':height+'px'});
-        errlog("Animating the top of the document to be off the page");
-      }
-      else{
-        errlog(timePlayed*100);
-        timeToTalk = timeToTalk -(timePlayed*100); // Reculculate the time left to play
-        errlog ("newly culclated time to talk is "+timeToTalk);
-        timePlayed = 0;
-      }
-      $('#auto').stop();
-      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();}); 
     }
 
     function fastForward(){
@@ -163,9 +168,17 @@
     function increaseTimePlayed(){
       if (playing == true){
         timePlayed++;
-        errlog(timePlayed/10); // This outputs the number of seconds we have played for
+        // errlog(timePlayed/10); // This outputs the number of seconds we have played for
       }
     }
+ 
+    function decreaseTimePlayed(){
+      if (playing == true){
+        timePlayed--;
+        // errlog(timePlayed/10); // This outputs the number of seconds we have played for
+      }
+    }
+
 
     function resetTimePlayed(){
       playing = false;
@@ -178,6 +191,10 @@
       $('#speed').html(speed);
       $('#speed').fadeIn();
       setTimeout("$('#speed').fadeOut();",2000);
+    }
+   
+    if (settings.autoPlay == 'true'){
+      play();
     }
 
   };
