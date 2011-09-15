@@ -116,10 +116,15 @@ body{
   display:inline-block;
 /*  border-left:solid 1px;*/
   font-weight:800;
+  border-top-right-radius:10%;
 }
 
 #faster:hover{
   background-color:lightgrey;
+}
+
+#faster:active{
+  text-shadow:5px 5px 10px #888;
 }
 
 #slower{
@@ -127,12 +132,17 @@ body{
   display:inline-block;
   left:0px;
   font-weight:800;
+  border-top-left-radius:10%;
  /* border-right:solid 1px;*/
 
 }
 
 #slower:hover{
   background-color:lightgrey;
+}
+
+#slower:active{
+  text-shadow:5px 5px 10px #888;
 }
 
 a{
