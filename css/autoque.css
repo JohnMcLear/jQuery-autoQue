@@ -1,3 +1,7 @@
+body{
+  background-color:#000;
+}
+
 .aQbutton{
   display:inline-block;
   opacity:.6;
@@ -63,6 +67,11 @@
 #auto{
   position:absolute;
   top:0;
+  color:#fff;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #example{
