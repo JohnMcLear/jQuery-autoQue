@@ -22,11 +22,34 @@ function gup( name )
 <body style="overflow:hidden;background-color:#000;">
 <div id="que" style="width:100%;height:100%;color:#000;vertical-align:50px;font-family:arial;line-height:150%"></div>
 <script type="text/javascript">
-var q = gup("q");
-var q = unescape(q);
-var q = q.replace(/\+/g," "); // I hate doing this
+var q             = gup("q");
+var q             = unescape(q);
+var q             = q.replace(/\+/g," "); // I hate doing this
+
+var settingString = {};
+var setting = new Array();
+setting[0] = "hoverRequired:"+gup('hoverRequired');
+setting[1] = "fontSize:"+gup('fontSize');
+setting[2] = "autoPlay:"+gup('autoPlay');
+setting[3] = "fontColor:"+gup('fontColor');
+setting[4] = "controlSize:"+gup('controlSize');
+setting[5] = "controlRadius:"+gup('controlRadius');
+setting[6] = "controlOpacity:"+gup('controlOpacity');
+setting[7] = "controlBGColor:"+gup('controlBGColor');
+setting[8] = "controlLocation"+gup('controlLocation');
+
+for (var i = 0;i<setting.length;i++)  // I had had something to drink when I wrote this and it's a complete waste of code.
+{
+  item = setting[i];
+  itemType = item.split(":");
+  if(itemType[1]){
+    item = '"'+itemType[0]+'"'+":"+'"'+itemType[1]+'"';
+    var name = itemType[0]
+    settingString[name] = itemType[1];
+  }
+}
 $('#que').html(q);
-$('#que').autoque({"fontColor":"#fff","autoPlay":"true"});  
+$('#que').autoque(settingString);
 </script>
 </body>
 </html>
