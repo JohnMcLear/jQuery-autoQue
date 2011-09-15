@@ -1,10 +1,9 @@
 // big bugs:  
 // We can only operate on the "auto ID" at the moment
-// passing JSON to the autoque controls CSS seems to be broken :\
-// if you pause and restart its really slow because it thinks it has ages to animate
+// Spamming Play makes it go really fast
+// Shadow needs to be set as active on all of the buttons
 
 (function( $ ){
-
   var debug = true;
   function errlog(error){
     if (console){
@@ -13,17 +12,16 @@
       }
     }
   }
-
   $.fn.autoque = function( options ) {
     var settings = {
-      'hoverRequired'     : 'false', // Is a hover required to see the controls?
-      'fontSize'        : '36px', // The font size used
+      'hoverRequired'   : 'false', // Is a hover required to see the controls?
+      'fontSize'        : '30px', // The font size used
       'fontColor'	: '#fff', // The color of the font
       'controlSize'     : '', // size of the controls - will auto resize
-      'controlRadius'   : '20px', // the radius of the corners on the controls
+      'controlRadius'   : '10%', // the radius of the corners on the controls
       'controlOpacity'  : '.9', // the opacity of the controls
       'controlBGColor'  : 'lightgrey',
-      'controlLocation' : '"right","10px"' // The location of the controls
+      'controlLocation' : {bottom:"10px",right:"10px"} // The location of the controls
     };
 
     // Put the options together
@@ -64,11 +62,8 @@
     $("#autoqueControls").css({'opacity':settings.controlOpacity});
     $("#autoqueControls").css('borderRadius',settings.controlRadius);
     $("#fastslow").css('borderRadius',settings.controlRadius);
-/*    $("#slower").css('borderRadius',settings.controlRadius);
-    $("#faster").css('borderRadius',settings.controlRadius);*/
-    $("#autoqueControls").css({"right":"10px","bottom":"5px"}); // This needs fixing cake
+    $("#autoqueControls").css(settings.controlLocation); 
     $("#autoqueControls").css({'backgroundColor':settings.controlBGColor});
-
     $(this).css({'font-size':settings.fontSize});
 
     // Add some event listeners onto the buttons
@@ -79,7 +74,6 @@
     $('#cFastForward').click(function(){fastForward();});
     $('#faster').click(function(){faster();});
     $('#slower').click(function(){slower();});
-
 
     // Some functions to control the playback
     function rewind(){ // A rewind function
