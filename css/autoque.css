@@ -17,13 +17,21 @@ body{
 }
 
 #cRewind{
-  letter-spacing:-10px;
+  letter-spacing:-0.3em;
+}
+
+#cRewind:active{
+  text-shadow:5px 5px 10px #888;
 }
 
 #cFastForward{
   letter-spacing:-0.4em;
   margin-left:-3.5%;
   z-index:9;
+}
+
+#cFastForward:active{
+  text-shadow:5px 5px 10px #888;
 }
 
 #cPause{
@@ -38,6 +46,10 @@ body{
   height:5%;
 }
 
+#cPause:active{
+  text-shadow:5px 5px 10px #888;
+}
+
 #autoqueControls{
   position:fixed;
   -moz-user-select: -moz-none;
@@ -49,8 +61,12 @@ body{
 #cUnplay{
   position:relative;
   width:10%;
-  margin-left:2%;
+  margin-left:4%;
   z-index:9;
+}
+
+#cUnplay:active{
+  text-shadow:5px 5px 10px #888;
 }
 
 #cPlay{
@@ -126,7 +142,7 @@ padding:0;
 
 #speed{
   width:10%;
-  height:34%;
+/*  height:34%;*/
   position:absolute;
   right:45%;
   top:0%;
