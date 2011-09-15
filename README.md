@@ -1,4 +1,4 @@
-# An autoQue plugin for jQuery.  
+# An autoQue plugin for jQuery.  asdf
 
 An autocue (also known as an teleprompter or telescript) is a display device that prompts the person speaking with an electronic visual text of a speech or script. 
 
@@ -12,14 +12,17 @@ Visit <http://primaryschoolict.com/autoQue/> to test it live
 
 # Example
 
+Basic usage example
+<code>$('#que').autoque();</code>
+
 See index.html and que.html for examples.
 
 # Installation
 
-1. Include the latest jQuery --> <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-2. Include the autoQue.js --> <script type="text/javascript" src="js/autoque.js"></script>
-3. Include the autoQue.css --> <link rel="stylesheet" href="css/autoque.css" type="text/css"/>
-4. Initiate the plugin --> $('#thisDiv').autoque();
+1. Include the latest (requires 1.4.2)
+2. Include the autoQue.js <code>&lt;script type="text/javascript" src="js/autoque.js"></script></code>
+3. Include the autoQue.css <code>&lt;link rel="stylesheet" href="css/autoque.css" type="text/css"/></code>
+4. Initiate the plugin <code>$('#thisDiv').autoque();</code>
 
 # Plugin Parameters
 
@@ -55,3 +58,5 @@ Example: /que.html?q=this%20is%20a%20string%20that%20needs%20to%20be%20at%20leas
 You should look at que.html to see how this is implemented.
 
 
+hi
+hi
