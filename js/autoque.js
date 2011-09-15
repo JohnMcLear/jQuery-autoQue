@@ -1,6 +1,8 @@
 // big bugs:  
 // We can only operate on the "auto ID" at the moment, this means you can only have one autoque per page which is kinda stupid
 // IE is broken
+// Params need reading in que.html
+
 
 (function( $ ){
   var debug = true;
