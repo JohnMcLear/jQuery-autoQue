@@ -20,7 +20,8 @@
       'controlOpacity'  : '.9', // the opacity of the controls
       'controlBGColor'  : 'lightgrey',
       'controlLocation' : {bottom:"10px",right:"10px"}, // The location of the controls
-      'autoPlay'        : 'false'
+      'autoPlay'        : 'false', // Automatically plays
+      'mainScreenClickPauses' : 'true' // Pauses the playback if a user clicks anywhere on teh screen
     };
 
     // Put the options together
@@ -73,6 +74,7 @@
     $('#cFastForward').click(function(){fastForward();});
     $('#faster').click(function(){faster();});
     $('#slower').click(function(){slower();});
+    $('#auto').click(function(){pause();});
 
     // Some functions to control the playback
     function rewind(){ // A rewind function
@@ -92,8 +94,14 @@
 
     function pause(){ // A pause function
       $('#auto').stop();
-      playing = false;
-      clearInterval(interval);
+      if (playing == false){
+        play();  // This means I can resume after a pause by hitting pause
+      }
+      else
+      {
+        playing = false;
+        clearInterval(interval);
+      }
     }
 
     function play(){ // A play function
