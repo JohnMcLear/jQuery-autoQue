@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <head>
 <title>Press F11 for full screen - AutoQue Teleprompter</title>
 <title>AutoQue - Press F11 for full screen</title>
@@ -41,7 +41,10 @@ setting[8] = "controlLocation"+gup('controlLocation');
 for (var i = 0;i<setting.length;i++)  // I had had something to drink when I wrote this and it's a complete waste of code.
 {
   item = setting[i];
-  itemType = item.split(":");
+  itemType = "";
+  if (item.length != 0){
+    itemType = item.split(":");
+  }
   if(itemType[1]){
     item = '"'+itemType[0]+'"'+":"+'"'+itemType[1]+'"';
     var name = itemType[0]
