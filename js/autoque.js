@@ -1,8 +1,7 @@
 // big bugs:  
 // We can only operate on the "auto ID" at the moment, this means you can only have one autoque per page which is kinda stupid
 // IE is broken
-// Params need reading in que.html
-
+// Testing
 
 (function( $ ){
   var debug = true;
@@ -199,6 +198,17 @@
       play();
     }
 
+    if (settings.hoverRequired == 'true'){
+      $('#autoqueControls').css({opacity:'.1'});
+      $('#autoqueControls').hover(
+        function(){
+          $('#autoqueControls').css({opacity:'.8'})
+        },
+        function(){
+          $('#autoqueControls').css({opacity:'.1'})
+        }
+      )
+    }
   };
 })( jQuery );
 
