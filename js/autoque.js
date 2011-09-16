@@ -4,7 +4,7 @@
 // Testing
 
 (function( $ ){
-  var debug = true;
+  var debug = false;
   function errlog(error){
     if (console){
       if(debug == true){
