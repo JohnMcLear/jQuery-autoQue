@@ -24,6 +24,7 @@ function gup( name )
 <div id="que" style="width:100%;height:100%;color:#000;vertical-align:50px;font-family:arial;line-height:150%"></div>
 <script type="text/javascript">
 var q             = gup("q");
+var q             = q.replace("%0D%0A","<br/>");
 var q             = unescape(q);
 var q             = q.replace(/\+/g," "); // I hate doing this
 
