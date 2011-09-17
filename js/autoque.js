@@ -1,7 +1,5 @@
 // big bugs:  
 // We can only operate on the "auto ID" at the moment, this means you can only have one autoque per page which is kinda stupid
-// IE is broken
-// Testing
 
 (function( $ ){
   var debug = true;
@@ -18,7 +16,7 @@
       'fontSize'        : '30px', // The font size used
       'fontColor'	: '#fff', // The color of the font
       'controlSize'     : '', // size of the controls - will auto resize
-      'controlRadius'   : '10%', // the radius of the corners on the controls
+      'controlRadius'   : '20px', // the radius of the corners on the controls
       'controlOpacity'  : '.9', // the opacity of the controls
       'controlBGColor'  : 'lightgrey',
       'controlLocation' : {bottom:"10px",right:"10px"}, // The location of the controls
