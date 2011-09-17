@@ -1,5 +1,9 @@
 body{
   background-color:#000;
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:100%;
 }
 
 .aQbutton{
@@ -7,7 +11,7 @@ body{
   opacity:.6;
   cursor:pointer;
   vertical-align:middle;
-/*  padding-left:2px;*/
+  padding-left:2px;
   width:15%;
   height:100%;
 }
@@ -17,22 +21,13 @@ body{
 }
 
 #cRewind{
-  letter-spacing:-0.3em;
-}
-
-#cRewind:active{
-  text-shadow:5px 5px 10px #888;
+  letter-spacing:-10px;
 }
 
 #cFastForward{
-  letter-spacing:-0.4em;
+  letter-spacing:-10px;
   margin-left:-3.5%;
   z-index:9;
-  padding-right:3.5%;
-}
-
-#cFastForward:active{
-  text-shadow:5px 5px 10px #888;
 }
 
 #cPause{
@@ -47,10 +42,6 @@ body{
   height:5%;
 }
 
-#cPause:active{
-  text-shadow:5px 5px 10px #888;
-}
-
 #autoqueControls{
   position:fixed;
   -moz-user-select: -moz-none;
@@ -62,21 +53,15 @@ body{
 #cUnplay{
   position:relative;
   width:10%;
-  margin-left:4%;
+  margin-left:2%;
   z-index:9;
-}
-
-#cUnplay:active{
-  text-shadow:5px 5px 10px #888;
 }
 
 #cPlay{
   position:relative;
   font-size:200%;
   width: 25%;
-  margin-right:4%;
-  margin-top:3%;
-  margin-bottom:3%;
+  margin-right:5%;
 }
 
 #cPlay:active{
@@ -117,15 +102,10 @@ body{
   display:inline-block;
 /*  border-left:solid 1px;*/
   font-weight:800;
-  border-top-right-radius:10%;
 }
 
 #faster:hover{
   background-color:lightgrey;
-}
-
-#faster:active{
-  text-shadow:5px 5px 10px #888;
 }
 
 #slower{
@@ -133,7 +113,6 @@ body{
   display:inline-block;
   left:0px;
   font-weight:800;
-  border-top-left-radius:10%;
  /* border-right:solid 1px;*/
 
 }
@@ -142,18 +121,14 @@ body{
   background-color:lightgrey;
 }
 
-#slower:active{
-  text-shadow:5px 5px 10px #888;
-}
-
 a{
 border:0;
 padding:0;
 }
 
 #speed{
-/*  width:10%;*/
-/*  height:34%;*/
+  width:10%;
+  height:34%;
   position:absolute;
   right:45%;
   top:0%;
