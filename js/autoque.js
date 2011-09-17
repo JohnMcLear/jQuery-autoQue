@@ -1,8 +1,10 @@
 // big bugs:  
 // We can only operate on the "auto ID" at the moment, this means you can only have one autoque per page which is kinda stupid
+// IE is broken
+// Testing
 
 (function( $ ){
-  var debug = false;
+  var debug = true;
   function errlog(error){
     if (console){
       if(debug == true){
@@ -16,12 +18,11 @@
       'fontSize'        : '30px', // The font size used
       'fontColor'	: '#fff', // The color of the font
       'controlSize'     : '', // size of the controls - will auto resize
-      'controlRadius'   : '20px', // the radius of the corners on the controls
+      'controlRadius'   : '10%', // the radius of the corners on the controls
       'controlOpacity'  : '.9', // the opacity of the controls
       'controlBGColor'  : 'lightgrey',
       'controlLocation' : {bottom:"10px",right:"10px"}, // The location of the controls
-      'autoPlay'        : 'false', // Automatically plays
-      'mainScreenClickPauses' : 'true' // Pauses the playback if a user clicks anywhere on teh screen
+      'autoPlay'        : 'false'
     };
 
     // Put the options together
@@ -46,7 +47,7 @@
     var original = this.html();
     var wordCount = original.split(' ').length;
     if (wordCount < 30){
-      original = "Your word count is less than 30 so we have replaced the text with some longer contents..  Here it is!  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+      original = "our word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  our word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  HYour word count is less than 30 so we have replaced the text with some longer contents..  Here it is!  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
       wordCount = original.split(' ').length;
     }
  
@@ -74,7 +75,6 @@
     $('#cFastForward').click(function(){fastForward();});
     $('#faster').click(function(){faster();});
     $('#slower').click(function(){slower();});
-    $('#auto').click(function(){pause();});
 
     // Some functions to control the playback
     function rewind(){ // A rewind function
@@ -94,14 +94,8 @@
 
     function pause(){ // A pause function
       $('#auto').stop();
-      if (playing == false){
-        play();  // This means I can resume after a pause by hitting pause
-      }
-      else
-      {
-        playing = false;
-        clearInterval(interval);
-      }
+      playing = false;
+      clearInterval(interval);
     }
 
     function play(){ // A play function
@@ -124,6 +118,7 @@
   
         if (currentPosition == '0px'){ // This if statement stops the pause button from re-starting the whole process after being unpaused
           $('#auto').css({'top':height+'px'});
+  // her is where I have a problem..
           errlog("Animating the top of the document to be off the page");
         }
         else{
