@@ -1,6 +1,9 @@
-// big bugs:  
-// We can only operate on the "auto" Div at the moment, this means you can only have one autoque per page which is kinda stupid
-// http://primaryschoolict.com:8080/autoQue/que.html?q=Welcome+to+PrimaryPad+Version+2+beta%21%0D%0A%0D%0AThis+pad+text+is+synchronized+as+you+type%2C+so+that+everyone+viewing+this+page+sees+the+same+text.++This+allows+you+to+collaborate+seamlessly+on+documents%21++Public+pads+last+for+30+days.++Use+a+pro+account+to+password+secure+your+pad+and+to+keep+pads+forever.++You+should+only+share+the+link+to+this+pad+if+you+trust+them.++Thanks+for+helping+us+improve+PrimaryPad%2C+please+click+the+feedback+badge+to+provide+feedback.%0D%0A%0D%0A++Welcome+to+PrimaryPad+Version+2+beta%21%0D%0A%0D%0AThis+pad+text+is+synchronized+as+you+type%2C+so+that+everyone+viewing+this+page+sees+the+same+text.++This+allows+you+to+collaborate+seamlessly+on+documents%21++Public+pads+last+for+30+days.++Use+a+pro+account+to+password+secure+your+pad+and+to+keep+pads+forever.++You+should+only+share+the+link+to+this+pad+if+you+trust+them.++Thanks+for+helping+us+improve+PrimaryPad%2C+please+click+the+feedback+badge+to+provide+feedback.%0D%0A%0D%0A++Welcome+to+PrimaryPad+Version+2+beta%21%0D%0A%0D%0AThis+pad+text+is+synchronized+as+you+type%2C+so+that+everyone+viewing+this+page+sees+the+same+text.++This+allows+you+to+collaborate+seamlessly+on+documents%21++Public+pads+last+for+30+days.++Use+a+pro+account+to+password+secure+your+pad+and+to+keep+pads+forever.++You+should+only+share+the+link+to+this+pad+if+you+trust+them.++Thanks+for+helping+us+improve+PrimaryPad%2C+please+click+the+feedback+badge+to+provide+feedback.%0D%0A%0D%0A++Welcome+to+PrimaryPad+Version+2+beta%21%0D%0A%0D%0AThis+pad+text+is+synchronized+as+you+type%2C+so+that+everyone+viewing+this+page+sees+the+same+text.++This+allows+you+to+collaborate+seamlessly+on+documents%21++Public+pads+last+for+30+days.++Use+a+pro+account+to+password+secure+your+pad+and+to+keep+pads+forever.++You+should+only+share+the+link+to+this+pad+if+you+trust+them.++Thanks+for+helping+us+improve+PrimaryPad%2C+please+click+the+feedback+badge+to+provide+feedback.%0D%0A%0D%0A++%0D%0A%0D%0A  -- try fast forward that then play it..  Very weird!
+/* 
+The jQuery autoQue plugin
+Author: John McLear [Primary Technology and Etherpad foundation] john@mclear.co.uk
+Github: https://github.com/johnyma22/jQuery-autoQue/
+License:  Apache license
+*/
 
 (function( $ ){
   var debug = true;
