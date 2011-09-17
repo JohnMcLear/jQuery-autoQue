@@ -1,5 +1,8 @@
 // big bugs:  
-// We can only operate on the "auto ID" at the moment, this means you can only have one autoque per page which is kinda stupid
+// We can only operate on the "auto" Div at the moment, this means you can only have one autoque per page which is kinda stupid
+
+// Minors:
+// Internet explorer allows you to highlight text objects still because it sucks:  See http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting
 
 (function( $ ){
   var debug = true;
