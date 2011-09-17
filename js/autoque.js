@@ -47,7 +47,7 @@
     var original = this.html();
     var wordCount = original.split(' ').length;
     if (wordCount < 30){
-      original = "Your word count is less than 30 so we have replaced the text with some longer contents..  Here it is!  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+      original = "our word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  our word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  Hour word count is less than 30 so we have replaced the text with some longer contents..  HYour word count is less than 30 so we have replaced the text with some longer contents..  Here it is!  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
       wordCount = original.split(' ').length;
     }
  
@@ -118,6 +118,7 @@
   
         if (currentPosition == '0px'){ // This if statement stops the pause button from re-starting the whole process after being unpaused
           $('#auto').css({'top':height+'px'});
+  // her is where I have a problem..
           errlog("Animating the top of the document to be off the page");
         }
         else{
