@@ -1,8 +1,6 @@
 // big bugs:  
 // We can only operate on the "auto" Div at the moment, this means you can only have one autoque per page which is kinda stupid
-
-// Minors:
-// Internet explorer allows you to highlight text objects still because it sucks:  See http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting
+// http://primaryschoolict.com:8080/autoQue/que.html?q=Welcome+to+PrimaryPad+Version+2+beta%21%0D%0A%0D%0AThis+pad+text+is+synchronized+as+you+type%2C+so+that+everyone+viewing+this+page+sees+the+same+text.++This+allows+you+to+collaborate+seamlessly+on+documents%21++Public+pads+last+for+30+days.++Use+a+pro+account+to+password+secure+your+pad+and+to+keep+pads+forever.++You+should+only+share+the+link+to+this+pad+if+you+trust+them.++Thanks+for+helping+us+improve+PrimaryPad%2C+please+click+the+feedback+badge+to+provide+feedback.%0D%0A%0D%0A++Welcome+to+PrimaryPad+Version+2+beta%21%0D%0A%0D%0AThis+pad+text+is+synchronized+as+you+type%2C+so+that+everyone+viewing+this+page+sees+the+same+text.++This+allows+you+to+collaborate+seamlessly+on+documents%21++Public+pads+last+for+30+days.++Use+a+pro+account+to+password+secure+your+pad+and+to+keep+pads+forever.++You+should+only+share+the+link+to+this+pad+if+you+trust+them.++Thanks+for+helping+us+improve+PrimaryPad%2C+please+click+the+feedback+badge+to+provide+feedback.%0D%0A%0D%0A++Welcome+to+PrimaryPad+Version+2+beta%21%0D%0A%0D%0AThis+pad+text+is+synchronized+as+you+type%2C+so+that+everyone+viewing+this+page+sees+the+same+text.++This+allows+you+to+collaborate+seamlessly+on+documents%21++Public+pads+last+for+30+days.++Use+a+pro+account+to+password+secure+your+pad+and+to+keep+pads+forever.++You+should+only+share+the+link+to+this+pad+if+you+trust+them.++Thanks+for+helping+us+improve+PrimaryPad%2C+please+click+the+feedback+badge+to+provide+feedback.%0D%0A%0D%0A++Welcome+to+PrimaryPad+Version+2+beta%21%0D%0A%0D%0AThis+pad+text+is+synchronized+as+you+type%2C+so+that+everyone+viewing+this+page+sees+the+same+text.++This+allows+you+to+collaborate+seamlessly+on+documents%21++Public+pads+last+for+30+days.++Use+a+pro+account+to+password+secure+your+pad+and+to+keep+pads+forever.++You+should+only+share+the+link+to+this+pad+if+you+trust+them.++Thanks+for+helping+us+improve+PrimaryPad%2C+please+click+the+feedback+badge+to+provide+feedback.%0D%0A%0D%0A++%0D%0A%0D%0A  -- try fast forward that then play it..  Very weird!
 
 (function( $ ){
   var debug = true;
@@ -21,9 +19,9 @@
       'controlSize'     : '', // size of the controls - will auto resize
       'controlRadius'   : '20px', // the radius of the corners on the controls
       'controlOpacity'  : '.9', // the opacity of the controls
-      'controlBGColor'  : 'lightgrey',
+      'controlBGColor'  : 'lightgrey', // The controls background color
       'controlLocation' : {bottom:"10px",right:"10px"}, // The location of the controls
-      'autoPlay'        : 'false'
+      'autoPlay'        : 'false' // Autoplay the contents or not?
     };
 
     // Put the options together
