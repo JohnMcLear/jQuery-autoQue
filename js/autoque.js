@@ -13,7 +13,7 @@
   $.fn.autoque = function( options ) {
     var settings = {
       'hoverRequired'   : 'false', // Is a hover required to see the controls?
-      'fontSize'        : '30px', // The font size used
+      'fontSize'        : '41px', // The font size used
       'fontColor'	: '#fff', // The color of the font
       'controlSize'     : '', // size of the controls - will auto resize
       'controlRadius'   : '20px', // the radius of the corners on the controls
