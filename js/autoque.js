@@ -61,6 +61,7 @@ License:  Apache license
     var controls = "<div class='aQbutton' id='cRewind' title='Rewind'>&#9668;&#9668;</div> <div class='aQbutton' id='cUnplay' title='Play backwards'>&#9668;</div> <div class='aQbutton' id='cPause' title='Pause'>=</div><div class='aQbutton' id='cPlay' title='Play'>&#9658;</div><div class='aQbutton' id='cFastForward' title='Fast Forward'>&#9658;&#9658;</div><div id='speed'></div>";
     $(this).html("<div id='auto'>" + original +"</div>");
     $(this).append("<div id='autoqueControls'><div id='fastslow'><div id='slower' title='slower'>-</div><div id='faster' title='Faster'>+</div></div>"+controls+"</div>");
+    $("#"+container+ " > #auto").bind('selectstart',function(){return false;}); // Stop text selection
     $("#"+container+ " > #auto").css({'color':settings.fontColor}); // Set the color of the text
     $("#autoqueControls").css({'width':settings.controlSize});  // Define the control sizeo
     $("#autoqueControls").css({'opacity':settings.controlOpacity}); // Set the control opacity
@@ -71,6 +72,7 @@ License:  Apache license
     $(this).css({'font-size':settings.fontSize}); // Set the font size
     var contentsHeight = $("#"+container+ " > #auto").height(); // Get the total height of the contents we have to animate
     errlog("Height of the auto div is "+contentsHeight);
+    $("#autoqueControls").children().bind('selectstart',function(){return false;}); // Stop text selection pt2
 	
     // Add some event listeners onto the buttons
     $('#cRewind').click(function(){rewind();});
