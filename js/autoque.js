@@ -60,15 +60,17 @@ License:  Apache license
     var controls = "<div class='aQbutton' id='cRewind' title='Rewind'>&#9668;&#9668;</div> <div class='aQbutton' id='cUnplay' title='Play backwards'>&#9668;</div> <div class='aQbutton' id='cPause' title='Pause'>=</div><div class='aQbutton' id='cPlay' title='Play'>&#9658;</div><div class='aQbutton' id='cFastForward' title='Fast Forward'>&#9658;&#9658;</div><div id='speed'></div>";
     $(this).html("<div id='auto'>" + original +"</div>");
     $(this).append("<div id='autoqueControls'><div id='fastslow'><div id='slower' title='slower'>-</div><div id='faster' title='Faster'>+</div></div>"+controls+"</div>");
-    $("#auto").css({'color':settings.fontColor});
-    $("#autoqueControls").css({'width':settings.controlSize}); 
-    $("#autoqueControls").css({'opacity':settings.controlOpacity});
-    $("#autoqueControls").css('borderRadius',settings.controlRadius);
-    $("#fastslow").css('borderRadius',settings.controlRadius);
-    $("#autoqueControls").css(settings.controlLocation); 
-    $("#autoqueControls").css({'backgroundColor':settings.controlBGColor});
-    $(this).css({'font-size':settings.fontSize});
-
+    $("#auto").css({'color':settings.fontColor}); // Set the color of the text
+    $("#autoqueControls").css({'width':settings.controlSize});  // Define the control sizeo
+    $("#autoqueControls").css({'opacity':settings.controlOpacity}); // Set the control opacity
+    $("#autoqueControls").css('borderRadius',settings.controlRadius); // Set the radius of the controls
+    $("#fastslow").css('borderRadius',settings.controlRadius); // Set the radius of the fast/slow
+    $("#autoqueControls").css(settings.controlLocation);  // Set the location of the controls
+    $("#autoqueControls").css({'backgroundColor':settings.controlBGColor}); // Set the background color of the controls
+    $(this).css({'font-size':settings.fontSize}); // Set the font size
+    var contentsHeight = $('#auto').height(); // Get the total height of the contents we have to animate
+    errlog("Height of the auto div is "+contentsHeight);
+	
     // Add some event listeners onto the buttons
     $('#cRewind').click(function(){rewind();});
     $('#cUnplay').click(function(){unplay();});
@@ -115,11 +117,11 @@ License:  Apache license
   
         if (currentPosition == "-"+height+"px"){
           errlog("Restarting play as it appears to have finished");
-          $('#auto').animate({'top':height+'px'}, 'linear');
+          $('#auto').animate({'top':contentsHeight+'px'}, 'linear');
         }
   
         if (currentPosition == '0px'){ // This if statement stops the pause button from re-starting the whole process after being unpaused
-          $('#auto').css({'top':height+'px'});
+          $('#auto').css({'top':'90%'});
   // her is where I have a problem..
           errlog("Animating the top of the document to be off the page");
         }
@@ -130,7 +132,7 @@ License:  Apache license
           timePlayed = 0;
         }
         $('#auto').stop();
-        $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();}); 
+        $('#auto').animate({'top':'-'+contentsHeight+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();}); 
       }
     }
 
@@ -154,7 +156,7 @@ License:  Apache license
       timeToTalk = timeToTalk*.8;
       timePlayed = 0;
       $('#auto').stop();
-      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, 'linear');
+      $('#auto').animate({'top':'-'+contentsHeight+'px'}, timeToTalk, 'linear');
       showspeed(speed);
     }
 
@@ -165,7 +167,7 @@ License:  Apache license
       timeToTalk = timeToTalk*1.2;
       timePlayed = 0;
       $('#auto').stop();
-      $('#auto').animate({'top':'-'+height+'px'}, timeToTalk, 'linear');
+      $('#auto').animate({'top':'-'+contentsHeight+'px'}, timeToTalk, 'linear');
       showspeed(speed);
     }
 
