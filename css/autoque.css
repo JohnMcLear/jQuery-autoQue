@@ -48,6 +48,7 @@ body{
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  padding-bottom:.2%;
 }
 
 #cUnplay{
@@ -135,3 +136,11 @@ padding:0;
   text-align:center;
   opacity:.8;
 }
+
+.furrghtd td{
+ -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
