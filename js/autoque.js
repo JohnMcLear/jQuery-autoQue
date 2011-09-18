@@ -93,7 +93,7 @@ License:  Apache license
       playing = true;
       interval = setInterval(decreaseTimePlayed,100);
       $('#auto').stop();
-      $('#auto').animate({'top':'+'+height+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();});
+      $('#auto').animate({'top':'+'+contentsHeight+'px'}, timeToTalk, 'linear', function(){resetTimePlayed();});
     }
 
     function pause(){ // A pause function
