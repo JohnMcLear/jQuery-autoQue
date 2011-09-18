@@ -79,6 +79,7 @@ body{
   user-select: none;
   margin-left:2%
   margin-right:2%;
+  width:96%;
 }
 
 #example{
@@ -139,11 +140,13 @@ padding:0;
   opacity:.8;
 }
 
+/* Feedback css */
 .furrghtd td{
  -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
   z-index:1;
+  opacity:.4;
 }
 
