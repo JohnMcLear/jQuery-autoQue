@@ -206,10 +206,10 @@ License:  Apache license
     }
 
     if (settings.hoverRequired == 'true'){
-      $('#autoqueControls').css({opacity:'.1'});
+      $('#autoqueControls').css({opacity:'.2'});
       $('#autoqueControls').hover(
         function(){
-          $('#autoqueControls').css({opacity:'.8'})
+          $('#autoqueControls').animate({opacity:'.8'})
         },
         function(){
           $('#autoqueControls').css({opacity:'.1'})

@@ -77,6 +77,8 @@ body{
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  margin-left:2%
+  margin-right:2%;
 }
 
 #example{
@@ -142,5 +144,6 @@ padding:0;
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  z-index:1;
 }
 
