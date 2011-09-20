@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Press F11 for full screen - AutoQue Teleprompter</title>
-<title>AutoQue - Press F11 for full screen</title>
+<title>Press F11 for full screen - AutoCue Teleprompter</title>
+<title>AutoCue - Press F11 for full screen</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" src="js/autoque.js"></script>
 <link rel="stylesheet" href="css/autoque.css" type="text/css"/>
@@ -21,7 +21,7 @@ function gup( name )
 </script>
 </head>
 <body style="overflow:hidden;background-color:#000;font-family:arial;">
-<div id="que" style="width:100%;height:100%;color:#000;vertical-align:50px;font-family:arial;line-height:150%"></div>
+<div id="Que" style="width:100%;height:100%;color:#000;vertical-align:50px;font-family:arial;line-height:150%"></div>
 <script type="text/javascript">
 var q             = gup("q");
 var q             = q.replace(/%0D%0A/g,"<br/>");
@@ -52,15 +52,15 @@ for (var i = 0;i<setting.length;i++)  // I had had something to drink when I wro
     settingString[name] = itemType[1];
   }
 }
-$('#que').html(q);
+$('#Que').html(q);
 settingString["autoPlay"] = "true";
 settingString["hoverRequired"] = "true";
-$('#que').autoque(settingString);
+$('#Que').autoque(settingString);
 </script>
 <script type="text/javascript">
-reformal_wdg_domain    = "autoQue";
+reformal_wdg_domain    = "autoCue";
 reformal_wdg_mode    = 0;
-reformal_wdg_title   = "autoQue";
+reformal_wdg_title   = "autoCue";
 reformal_wdg_ltitle  = "Leave feedback";
 reformal_wdg_lfont   = "";
 reformal_wdg_lsize   = "";
@@ -77,6 +77,6 @@ reformal_wdg_tbcolor  = "#FFFFFF";
  
 </script>
 
-<script type="text/javascript" language="JavaScript" src="http://idea.informer.com/tab6.js?domain=autoQue"></script><noscript><a href="http://autoQue.idea.informer.com">autoQue feedback </a> <a href="http://idea.informer.com"><img src="http://widget.idea.informer.com/tmpl/images/widget_logo.jpg" /></a></noscript>
+<script type="text/javascript" language="JavaScript" src="http://idea.informer.com/tab6.js?domain=autoCue"></script><noscript><a href="http://autoCue.idea.informer.com">autoCue feedback </a> <a href="http://idea.informer.com"><img src="http://widget.idea.informer.com/tmpl/images/widget_logo.jpg" /></a></noscript>
 </body>
 </html>
