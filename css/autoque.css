@@ -103,6 +103,7 @@ body{
 }
 
 #faster{
+  padding-bottom:3px;
   width:50%;
   right:0px;
   display:inline-block;
@@ -115,6 +116,7 @@ body{
 }
 
 #slower{
+  padding-bottom:3px;
   width:50%;
   display:inline-block;
   left:0px;
