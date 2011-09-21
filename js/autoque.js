@@ -55,7 +55,7 @@ License:  Apache license
     }
  
     // how long would this wordcount take?
-    var timeToTalk = (wordCount / .75) * 100; // in seconds
+    var timeToTalk = (wordCount / .75) * 250; // in seconds
 
     // Define the controls and write them to the UI
     var controls = "<div class='aQbutton' id='cRewind' title='Rewind'>&#9668;&#9668;</div> <div class='aQbutton' id='cUnplay' title='Play backwards'>&#9668;</div> <div class='aQbutton' id='cPause' title='Pause'>=</div><div class='aQbutton' id='cPlay' title='Play'>&#9658;</div><div class='aQbutton' id='cFastForward' title='Fast Forward'>&#9658;&#9658;</div><div id='speed'></div>";
@@ -66,6 +66,9 @@ License:  Apache license
     $("#autoqueControls").css({'width':settings.controlSize});  // Define the control sizeo
     $("#autoqueControls").css({'opacity':settings.controlOpacity}); // Set the control opacity
     $("#autoqueControls").css('borderRadius',settings.controlRadius); // Set the radius of the controls
+    $("#slower").css('borderTopLeftRadius',settings.controlRadius); // Set the radius of the controls
+    $("#faster").css('borderTopRightRadius',settings.controlRadius); // Set the radius of the controls
+
     $("#fastslow").css('borderRadius',settings.controlRadius); // Set the radius of the fast/slow
     $("#autoqueControls").css(settings.controlLocation);  // Set the location of the controls
     $("#autoqueControls").css({'backgroundColor':settings.controlBGColor}); // Set the background color of the controls
